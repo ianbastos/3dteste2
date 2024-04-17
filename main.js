@@ -11,7 +11,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 renderer.setSize(window.innerWidth, window.innerHeight);
 scene.background = new THREE.Color(0xeff5555);
 scene.add(new THREE.HemisphereLight(0xffffcc, 0x333399, 1.0));
-camera.position.set(-2, 2, 10);
+camera.position.set(-2, -20, 5);
 
 //cdn.wtlstudio.com/sample.wtlstudio.com/48315172-1012-4127-9e52-ed8738ba5e37.glb'
 new GLTFLoader().load('space.gltf', ({ scene: model }, animations) => {
@@ -28,7 +28,8 @@ new GLTFLoader().load('space.gltf', ({ scene: model }, animations) => {
 
 const animate = () => {
   if (mesh) {
-    mesh.rotateY(Math.PI / 360);
+    mesh.rotateY(0/360);
+    //Math.PI
   }
 
   renderer.render(scene, camera);
